@@ -18,6 +18,29 @@
 }
 
 .about-section .content {
+  .download-btn {
+    margin-top: 20px;
+    padding: 10px 22px;
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .cv_text {
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+
+  .download-btn:hover {
+    background-color: #125aa3;
+  }
+
   text-align: left;
   z-index: 2;
 

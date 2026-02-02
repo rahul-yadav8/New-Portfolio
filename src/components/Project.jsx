@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 
 import mock08 from "../assets/images/mock08.png";
-import mock09 from "../assets/images/mock09.png";
+import foodPanda from "../assets/images/foodPanda.png";
 import mock10 from "../assets/images/mock10.png";
 import FoodApp from "../assets/images/Thali.png";
-import ReelBrain from "../assets/images/ReelBrain.png";
+import roadSign from "../assets/images/roadSign.png";
+import aiAgentAssistant from "../assets/images/ai-agent-assistant.png";
 import Ecommerce from "../assets/images/Ecommerce.png";
+import Youtube from "../assets/images/youtube-clone.png";
 import commingsoon from "../assets/images/commingsoon.jpg";
 import "../assets/styles/Project.scss";
 
@@ -23,6 +25,7 @@ function Project() {
       techStack: "React JS, Redux, Tailwind CSS, JavaScript, and more.",
       liveUrl: "https://resturant-food-app1.netlify.app/",
       githubUrl: "",
+      type: "web",
     },
 
     {
@@ -35,45 +38,72 @@ function Project() {
       techStack: "React JS, Redux",
       liveUrl: "https://effortless-bombolone-365e7b.netlify.app/product",
       githubUrl: "",
+      type: "web",
+    },
+    {
+      id: 13,
+      title: "Youtube clone (html,css,js)",
+      image: Youtube,
+      // youtubeId: "YOUR_YOUTUBE_ID_1",
+      description: "A youtube clone which build in html css and javascript.",
+      techStack: "Html css javascript",
+      liveUrl: "https://vermillion-stardust-4b6081.netlify.app/",
+      githubUrl: "",
+      type: "web",
     },
 
     {
-      id: 22,
-      title: "Reel Brain (Expo)",
-      image: ReelBrain,
-      youtubeId: "1C_Dw5bY68k", // Replace with actual YouTube ID
-      // https://youtube.com/shorts/1C_Dw5bY68k?feature=share
+      id: 25,
+      title: "AI Agent Assistant (Expo)",
+      image: aiAgentAssistant,
+      youtubeId: "a-RG_XQY53U",
       description:
-        "A high-performance Social Media mobile app built with React Native / Expo, AWS, and Redux, optimized for all devices with a lean size (75MB). It features server-side rendering (SSR) for improved SEO and performance.",
+        "Build, chat, and customize your own AI agents in one place 🚀 This app lets you talk with AI assistants, create custom agents for different tasks, and explore powerful AI features all in a simple, user-friendly interface",
+      techStack: "React Native, Expo, context Api, Tailwind CSS, TypeScript, and more.",
+      liveUrl: "",
+      // githubUrl: "https://github.com/ahm3d19/ClickNBuy_Expo",
+      githubUrl: "",
+      type: "mobile",
+    },
+    {
+      id: 22,
+      title: "Road Sign AI (Expo)",
+      image: roadSign,
+      youtubeId: "LTiCH5La_zY",
+      description:
+        "Developed an AI-powered road sign recognition feature that allows users to scan road signs and instantly receive detailed explanations, helping them learn unfamiliar signs.",
       techStack: "React Native, Expo, AWS, Redux, Tailwind CSS, TypeScript, and more.",
       liveUrl: "",
       // githubUrl: "https://github.com/ahm3d19/ClickNBuy_Expo",
       githubUrl: "",
+      type: "mobile",
     },
     {
       id: 2,
-      title: "Click N Buy (Expo)",
+      title: "Shop Now App",
       image: mock10,
-      youtubeId: "t0t1doAM76Y", // Replace with actual YouTube ID
+      youtubeId: "cmwrvWAyVIU", // Replace with actual YouTube ID
       description:
         "A high-performance Ecommerce mobile app built with React Native / Expo, AWS, and Redux, optimized for all devices with a lean size (75MB). It features server-side rendering (SSR) for improved SEO and performance.",
-      techStack: "React Native, Expo, AWS, Redux, Tailwind CSS, TypeScript, and more.",
+      techStack: "React Native, AWS, Redux, Tailwind CSS, TypeScript, and more.",
       liveUrl: "",
       // githubUrl: "https://github.com/ahm3d19/ClickNBuy_Expo",
       githubUrl: "",
+      type: "mobile",
     },
 
     {
       id: 4,
-      title: "StanBik Banking App (Expo)",
-      image: mock09,
-      youtubeId: "33Tg3NLE0dw", // Replace with actual YouTube ID
+      title: "Food Panda App",
+      image: foodPanda,
+      youtubeId: "71wJ7w_EamU",
       description:
-        "A high-performance mobile banking app built with React Native, AWS, and Redux, optimized for all devices with a lean size (100MB). It features a sleek design and smooth user experience, ensuring fast load times and responsiveness across all devices.",
-      techStack: "React Native, Expo, AWS, Redux, Tailwind CSS, TypeScript, and more.",
+        "A modern and responsive food delivery web application inspired by platforms like FoodPanda. The app allows users to explore restaurants, browse menus, add items to the cart, and place orders with a smooth and intuitive user experience. Built with performance and scalability in mind, it focuses on clean UI, efficient state management, and fast interactions across devices.",
+      techStack: "React Native, Redux, Tailwind CSS, TypeScript, and more.",
       liveUrl: "",
       // githubUrl: "https://github.com/ahm3d19/STANBIK",
       githubUrl: "",
+      type: "mobile",
     },
     {
       id: 5,
@@ -86,6 +116,7 @@ function Project() {
       liveUrl: "",
       // githubUrl: "https://github.com/ahm3d19/Coffee",
       githubUrl: "",
+      type: "mobile",
     },
     {
       id: 6,
@@ -97,6 +128,7 @@ function Project() {
       liveUrl: "",
       // githubUrl: "https://github.com/ahm3d19/Coffee",
       githubUrl: "",
+      type: "mobile",
     },
   ];
 
@@ -116,11 +148,13 @@ function Project() {
           <div className="project" key={project.id}>
             <div className="project-image-container" onClick={() => openVideoModal(project)}>
               <img src={project.image} className="zoom" alt="thumbnail" width="100%" />
-              <div className="play-button">
-                <svg viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z" fill="white" />
-                </svg>
-              </div>
+              {project.type === "mobile" && (
+                <div className="play-button">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" fill="white" />
+                  </svg>
+                </div>
+              )}
             </div>
             <h2 onClick={() => openVideoModal(project)} style={{ cursor: "pointer" }}>
               {project.title}
@@ -146,7 +180,7 @@ function Project() {
       </div>
 
       {/* YouTube Video Modal */}
-      {selectedProject && (
+      {selectedProject && selectedProject.type === "mobile" && (
         <div className="video-modal" onClick={closeVideoModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <button className="close-button" onClick={closeVideoModal}>

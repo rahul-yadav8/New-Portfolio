@@ -3,6 +3,8 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import "../assets/styles/Main.scss";
+import { Download } from "@mui/icons-material";
+// import resume from "../../public/Rahul_yadav.resume.pdf";
 
 function Main() {
   return (
@@ -26,9 +28,14 @@ function Main() {
           <h1>Rahul Yadav</h1>
 
           <p>
-            2+ Year Commercial Experience | Frontend and Mobile Developer <br /> Next JS / React Js / React
-            Native / Expo | Web + iOS + Android
+            2+ Year Commercial Experience | <br /> Frontend and Mobile Application Developer
           </p>
+
+          <a href="/Rahul_yadav.resume.pdf" download="Rahul_Yadav_Resume.pdf">
+            <button className="download-btn">
+              <span className="cv_text">Download CV</span> <Download />
+            </button>
+          </a>
 
           <div className="mobile_social_icons">
             <a href="https://github.com/ahm3d19" target="_blank" rel="noreferrer">
